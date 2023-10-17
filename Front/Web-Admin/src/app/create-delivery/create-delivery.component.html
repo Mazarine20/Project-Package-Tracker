@@ -1,0 +1,42 @@
+<div class="toolbar" role="banner">
+  <span class="centered-text">{{title}}</span>
+</div>
+<div class="content" role="main">
+
+  <div class="container" *ngIf="!submitted">
+    <span class="title">Delivery Form</span>
+    <div class="card">
+      <form [formGroup]="deliveryForm">
+        <div class="form-group">
+          <label for="package_id">Package to Delivery :</label>
+          <select  name="package_id" class="package_id" formControlName="package_id">
+            <!-- <select [(ngModel)]="" name="package_id" class="package_id" (change)="processIt()" formControlName="package_id"> -->
+            <option value="package_id">Select package</option>
+            <!-- <option *ngFor="">{{  }} </option> -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="location">Location :</label> <br> 
+          <div class="form-group1">
+            <label for="lat">latitude     :</label>
+            <input type="number" id="lat" class="form-control1" formControlName="lat">
+            <label for="lng">longitude :</label>
+            <input type="number" id="lng" class="form-control1" formControlName="lng">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="status">Status :</label>
+          <div class="form-control" id="status">open</div>
+        </div>
+        <div class="buttonContainer">
+          <a routerLink='/' class="button">return</a>
+          <button type="submit" class="button" (click)="saveDelivery()">Submit</button>
+        </div>
+        <div>
+
+        </div>
+      </form>
+    </div>
+
+
+  </div>

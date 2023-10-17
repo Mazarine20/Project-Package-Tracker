@@ -1,0 +1,75 @@
+<div class="toolbar" role="banner">
+  <span class="centered-text">{{title}}</span>
+</div>
+<div class="content" role="main">
+
+  <div class="container" *ngIf="!submitted">
+    <span class="title">Package Form</span>
+
+    <div class="card">
+      <form [formGroup]="packageForm">
+        <div class="form-group">
+          <label for="description">Description :</label>
+          <input type="text" id="description" class="form-control" formControlName="description">
+        </div>
+        <div class="form-group">
+          <label for="weight">Weight :</label>
+          <input type="number" id="weight" class="form-control" formControlName="weight">
+        </div>
+        <div class="form-group">
+          <label for="width">Width :</label>
+          <input type="number" id="width" class="form-control" formControlName="width">
+        </div>
+        <div class="form-group">
+          <label for="height">Height :</label>
+          <input type="number" id="height" class="form-control" formControlName="height">
+        </div>
+        <div class="form-group">
+          <label for="depth">Depth :</label>
+          <input type="number" id="depth" class="form-control" formControlName="depth">
+        </div>
+        <div class="form-group">
+          <label for="from_name">From name :</label>
+          <input type="text" id="from_name" class="form-control" formControlName="from_name">
+        </div>
+        <div class="form-group">
+          <label for="from_address">From address :</label>
+          <input type="text" id="from_address" class="form-control" formControlName="from_address">
+        </div>
+        <div class="form-group">
+          <label for="from_location">From location :</label>
+          <div class="form-group1">
+            <label for="from_lat">latitude :</label>
+            <input type="number" id="from_lat" class="form-control1" formControlName="from_lat">
+            <label for="from_lng">longitude :</label>
+            <input type="number" id="from_lng" class="form-control1" formControlName="from_lng">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="to_name">To name :</label>
+          <input type="text" id="to_name" class="form-control" formControlName="to_name">
+        </div>
+        <div class="form-group">
+          <label for="to_address">To address :</label>
+          <input type="text" id="to_address" class="form-control" formControlName="to_address">
+        </div>
+        <div class="form-group">
+          <label for="to_location">To location :</label>
+          <div class="form-group1">
+            <label for="to_lat">latitude :</label>
+            <input type="number" id="to_lat" class="form-control1" formControlName="to_lat">
+            <label for="to_lng">longitude :</label>
+            <input type="number" id="to_lng" class="form-control1" formControlName="to_lng">
+          </div>
+        </div>
+        <div class="buttonContainer">
+          <a routerLink='/' class="button">return</a>
+          <button type="submit" class="button" (click)="savePackage()">Submit</button>
+        </div>
+        <div>
+
+        </div>
+      </form>
+    </div>
+
+  </div>
